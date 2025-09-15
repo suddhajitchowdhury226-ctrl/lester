@@ -295,10 +295,10 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Team marquee - Slower animations */}
+        {/* Team marquee - Much slower animations */}
         <div className="mt-20 flex justify-center gap-8 max-h-[800px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
           <div className="hidden lg:block">
-            <Marquee pauseOnHover vertical className="[--duration:45s]">
+            <Marquee pauseOnHover vertical className="[--duration:80s]">
               {firstColumn.map((member) => (
                 <TeamMemberCard 
                   key={member.username} 
@@ -310,7 +310,7 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="hidden md:block">
-            <Marquee reverse pauseOnHover vertical className="[--duration:50s]">
+            <Marquee reverse pauseOnHover vertical className="[--duration:90s]">
               {secondColumn.map((member) => (
                 <TeamMemberCard 
                   key={member.username} 
@@ -322,7 +322,7 @@ export default function TestimonialsSection() {
           </div>
 
           <div>
-            <Marquee pauseOnHover vertical className="[--duration:55s]">
+            <Marquee pauseOnHover vertical className="[--duration:100s]">
               {thirdColumn.map((member) => (
                 <TeamMemberCard 
                   key={member.username} 

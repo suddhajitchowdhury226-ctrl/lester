@@ -3517,6 +3517,15 @@ font-weight: 100 900;
   .\[--duration\:55s\] {
     --duration: 55s;
   }
+  .\[--duration\:80s\] {
+    --duration: 80s;
+  }
+  .\[--duration\:90s\] {
+    --duration: 90s;
+  }
+  .\[--duration\:100s\] {
+    --duration: 100s;
+  }
   .\[--gap\:1rem\] {
     --gap: 1rem;
   }
