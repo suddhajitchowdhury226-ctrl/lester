@@ -248,6 +248,7 @@ const PopupCard = ({ member, isOpen, onClose }) => {
 export default function TestimonialsSection() {
   const [selectedMember, setSelectedMember] = useState(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isAnimationActive, setIsAnimationActive] = useState(false);
 
   const handleCardClick = (member) => {
     setSelectedMember(member);
@@ -259,8 +260,21 @@ export default function TestimonialsSection() {
     setSelectedMember(null);
   };
 
+  const handleMouseEnter = () => {
+    setIsAnimationActive(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsAnimationActive(false);
+  };
+
   return (
-    <section id="team" className="relative py-24 overflow-hidden bg-black">
+    <section 
+      id="team" 
+      className="relative py-24 overflow-hidden bg-black"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 h-96 w-96 bg-[#e78a53]/10 rounded-full blur-[120px] animate-pulse"></div>
@@ -295,10 +309,14 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Team marquee - Much slower animations */}
+        {/* Team marquee - Animation starts on hover */}
         <div className="mt-20 flex justify-center gap-8 max-h-[800px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
           <div className="hidden lg:block">
-            <Marquee pauseOnHover vertical className="[--duration:80s]">
+            <Marquee 
+              pauseOnHover 
+              vertical 
+              className={`[--duration:80s] ${!isAnimationActive ? '[animation-play-state:paused]' : ''}`}
+            >
               {firstColumn.map((member) => (
                 <TeamMemberCard 
                   key={member.username} 
@@ -310,7 +328,12 @@ export default function TestimonialsSection() {
           </div>
 
           <div className="hidden md:block">
-            <Marquee reverse pauseOnHover vertical className="[--duration:90s]">
+            <Marquee 
+              reverse 
+              pauseOnHover 
+              vertical 
+              className={`[--duration:90s] ${!isAnimationActive ? '[animation-play-state:paused]' : ''}`}
+            >
               {secondColumn.map((member) => (
                 <TeamMemberCard 
                   key={member.username} 
@@ -322,7 +345,11 @@ export default function TestimonialsSection() {
           </div>
 
           <div>
-            <Marquee pauseOnHover vertical className="[--duration:100s]">
+            <Marquee 
+              pauseOnHover 
+              vertical 
+              className={`[--duration:100s] ${!isAnimationActive ? '[animation-play-state:paused]' : ''}`}
+            >
               {thirdColumn.map((member) => (
                 <TeamMemberCard 
                   key={member.username} 
