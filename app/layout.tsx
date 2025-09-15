@@ -7,7 +7,11 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Calverts Digital Technology Pvt. Ltd.",
   description: "Elevate Your Digital Presence with Calverts - Expert Web Development & Digital Marketing Solutions",
-  generator: "Next.js",
+  generator: "Suddhajit",
+  icons: {
+    icon: '/round-logo.jpeg',
+    apple: '/round-logo.jpeg',
+  },
 }
 
 export default function RootLayout({

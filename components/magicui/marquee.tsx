@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import type { ReactNode } from "react"
+import React, { ReactNode } from "react"
 
 interface MarqueeProps {
   className?: string
@@ -46,7 +46,13 @@ export function Marquee({
               "[animation-direction:reverse]": reverse,
             })}
           >
-            {children}
+            {React.Children.map(children, (child, idx) =>
+              React.isValidElement(child)
+                ? React.cloneElement(child as React.ReactElement, {
+                    key: `${i}-${idx}`,
+                  })
+                : child
+            )}
           </div>
         ))}
     </div>
