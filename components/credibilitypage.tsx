@@ -132,7 +132,7 @@ export default function CredibilityPage() {
               </p>
 
               <div className="mt-6">
-                <h4 className="text-sm font-medium text-muted-foreground">Recognitions & Certifications (optional)</h4>
+                {/* <h4 className="text-sm font-medium text-muted-foreground">Recognitions & Certifications (optional)</h4> */}
                 <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {badges.map((b, index) => (
                     <div
