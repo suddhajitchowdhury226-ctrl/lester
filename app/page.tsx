@@ -152,6 +152,18 @@ function HeroScrollingText() {
               >
                 ✦
               </span>
+              <span 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold px-12"
+                style={{ color: '#F5B97F' }}
+              >
+                Web Development 
+              </span>
+              <span 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold px-4"
+                style={{ color: '#FABB79' }}
+              >
+                ✦
+              </span>
             </div>
           ))}
         </div>
