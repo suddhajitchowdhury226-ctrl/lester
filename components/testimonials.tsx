@@ -24,7 +24,7 @@ const teamMembers = [
     name: "Sandip Sharma",
     // username: "@sandip.sharma",
     role: "AI-Powered Marketing Strategist",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    img: "/sandip.jpeg",
     gradient: "from-green-500/20 to-emerald-500/20",
     expertise: ["Marketing", "Analytics", "Growth"],
     bio: "Strategic marketing professional leveraging AI and data analytics to drive growth and optimize customer engagement across digital channels."
